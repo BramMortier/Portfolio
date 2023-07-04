@@ -1,0 +1,120 @@
+@use "../utils" as *;
+
+.experience {
+    width: fit-content;
+
+    &__container {
+        max-width: 80rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: var(--space-4xl) var(--space-xl) var(--space-3xl);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @include breakpoint(tablet) {
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        @include breakpoint(mobile) {
+            padding: var(--space-2xl) var(--space-xl);
+        }
+
+        @include breakpoint(mobile) {
+            padding: var(--space-2xl) var(--space-lg);
+        }
+    }
+
+    &__tabs {
+        max-width: 50rem;
+        display: flex;
+        gap: var(--space-2xl);
+
+        @include breakpoint(mobile) {
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+    }
+
+    &__company-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+
+        @include breakpoint(mobile) {
+            flex-direction: row;
+            width: 0;
+            min-width: 100%;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    &__company {
+        padding: var(--space-xs) var(--space-xl) var(--space-xs);
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: all ease 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        &--active {
+            color: var(--teal-400);
+            background-color: var(--gray-700);
+            border: 1px solid var(--teal-400);
+        }
+    }
+
+    &__info {
+        & > h4 {
+            font-size: var(--fs-xl);
+            font-weight: var(--fw-bold);
+            margin-bottom: var(--space-2xs);
+            line-height: 1.4;
+        }
+
+        & > p {
+            color: var(--gray-300);
+            font-weight: var(--fw-bold);
+            margin-bottom: var(--space-md);
+        }
+    }
+
+    &__company-name {
+        color: var(--teal-400);
+        font-weight: var(--fw-semibold);
+    }
+
+    &__summary {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    &__summary-bullet {
+        display: flex;
+
+        & > p {
+            color: var(--gray-300);
+            padding-left: var(--space-xl);
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0.5rem;
+                left: 0;
+                width: 8px;
+                height: 8px;
+                transform: rotate(45deg);
+                background-color: var(--teal-400);
+            }
+        }
+    }
+}

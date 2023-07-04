@@ -1,0 +1,45 @@
+:root {
+    --font: "source-sans-pro", sans-serif;
+
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl: 1.75rem;
+    --fs-3xl: 3.5rem;
+    --fs-4xl: 4.5rem;
+
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-semibold: 500;
+    --fw-bold: 600;
+    --fw-extra-bold: 700;
+
+    --line-height-sm: 1;
+    --line-height-md: 1.6;
+}
+
+body,
+input,
+button,
+textarea,
+a,
+fieldset,
+legend,
+label {
+    font-family: var(--font);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-normal);
+    line-height: var(--line-height-md);
+    font-style: normal;
+    color: var(--off-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: var(--line-height-sm);
+    font-weight: var(--fw-semibold);
+}

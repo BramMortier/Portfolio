@@ -1,0 +1,75 @@
+@use "../utils" as *;
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 115px;
+    padding-inline: var(--space-xl);
+
+    @include breakpoint(tablet) {
+        justify-content: flex-end;
+        height: fit-content;
+        padding: var(--space-md);
+    }
+
+    &__nav {
+        flex-grow: 1;
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+
+    &__nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-2xl);
+
+        @include breakpoint(desktop) {
+            gap: var(--space-xl);
+        }
+    }
+
+    &__nav-link a {
+        position: relative;
+        font-size: var(--fs-lg);
+        font-weight: var(--semibold);
+        padding: var(--space-sm);
+        transition: all ease 0.3s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 2px;
+            background-color: var(--teal-400);
+            transition: all ease 0.25s;
+        }
+
+        &:hover {
+            color: var(--teal-400);
+
+            &::after {
+                width: 60%;
+            }
+        }
+    }
+
+    #open-mobile-menu-btn {
+        display: none;
+
+        @include breakpoint(tablet) {
+            display: flex;
+        }
+    }
+
+    #search-btn {
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+}

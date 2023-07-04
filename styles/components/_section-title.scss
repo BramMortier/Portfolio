@@ -1,0 +1,42 @@
+@use "../utils" as *;
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-xl);
+
+    @include breakpoint(mobile) {
+        margin-bottom: var(--space-lg);
+    }
+
+    &__name {
+        font-size: var(--fs-3xl);
+        font-weight: var(--fw-bold);
+
+        @include breakpoint(mobile) {
+            font-size: calc(var(--fs-3xl) - 1rem);
+        }
+    }
+
+    &__label {
+        position: relative;
+        font-size: var(--fs-lg);
+        font-weight: var(--fw-light);
+        display: flex;
+        margin-bottom: var(--space-lg);
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.75rem;
+            height: 2px;
+            width: 200px;
+            background: linear-gradient(90deg, var(--teal-400) 60%, var(--gray-400) 60%);
+        }
+    }
+
+    &__slash {
+        padding-right: var(--space-xs);
+        background-color: var(--gray-800);
+    }
+}

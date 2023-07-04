@@ -1,0 +1,172 @@
+@use "../utils" as *;
+
+.hero {
+    position: relative;
+    height: calc(100vh - 115px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+        height: fit-content;
+    }
+
+    &__bg-img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-80%);
+        height: 90vh;
+        width: fit-content;
+        z-index: -1;
+
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+
+    &__intro {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+        max-width: 1600px;
+        width: 100%;
+        margin: 0 auto;
+        padding-inline: var(--space-xl);
+
+        @include breakpoint(tablet) {
+            grid-template-columns: 1fr;
+            margin-bottom: var(--space-2xl);
+        }
+
+        @include breakpoint(mobileS) {
+            padding-inline: var(--space-lg);
+        }
+    }
+
+    &__intro-content {
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & > span {
+            color: var(--teal-400);
+            font-size: 2.25rem;
+            font-weight: var(--fw-bold);
+            margin-bottom: var(--space-xs);
+
+            @include breakpoint(mobile) {
+                font-size: var(--fs-2xl);
+                margin-bottom: 0;
+            }
+
+            @include breakpoint(mobileS) {
+                font-size: var(--fs-xl);
+            }
+        }
+
+        & > h2 {
+            color: var(--gray-300);
+            font-size: var(--fs-4xl);
+            font-weight: var(--fw-bold);
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
+
+            @include breakpoint(mobile) {
+                font-size: var(--fs-3xl);
+            }
+
+            @include breakpoint(mobileS) {
+                font-size: calc(var(--fs-3xl) - 1rem);
+            }
+
+            & > span.highlighted {
+                color: var(--off-white);
+            }
+        }
+
+        & > p {
+            color: var(--gray-300);
+            font-size: var(--fs-lg);
+            max-width: 35rem;
+
+            & > span.highlighted {
+                color: var(--off-white);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__actions {
+        background-color: #010101cb;
+        backdrop-filter: blur(5px);
+    }
+
+    &__actions-content {
+        max-width: 100rem;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-4xl);
+        padding: var(--space-xl);
+
+        @include breakpoint(desktop) {
+            gap: var(--space-2xl);
+        }
+
+        @include breakpoint(mobileS) {
+            padding-inline: var(--space-lg);
+        }
+
+        @include breakpoint(tablet) {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &__action {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+
+        @include breakpoint(tablet) {
+            &:not(:last-child) {
+                padding-bottom: var(--space-xl);
+                margin-bottom: var(--space-xl);
+                border-bottom: 1px solid var(--gray-700);
+            }
+        }
+
+        & > h4 {
+            text-transform: uppercase;
+            font-size: var(--fs-lg);
+            font-weight: var(--fw-bold);
+        }
+
+        & > p {
+            color: var(--gray-300);
+            line-height: var(--line-height-md);
+
+            & > span.link {
+                color: var(--off-white);
+                text-decoration: underline;
+                transition: all ease 0.3s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: var(--teal-400);
+                }
+            }
+        }
+    }
+
+    &__contact-btns {
+        display: flex;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,124 @@
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(-100%);
+    background-color: var(--gray-900);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__background-deco {
+        position: absolute;
+        top: -0.8rem;
+        left: var(--space-lg);
+        display: grid;
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        gap: var(--space-xl);
+
+        svg {
+            height: 100%;
+            width: fit-content;
+
+            .a {
+                fill: var(--gray-800);
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            background-color: var(--gray-800);
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+    }
+
+    &__nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    &__nav-link a {
+        display: flex;
+        gap: var(--space-xs);
+
+        & > div:nth-child(2) {
+            overflow: hidden;
+        }
+    }
+
+    &__nav-link-tag {
+        margin-top: var(--space-2xs);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2xs);
+
+        & > p {
+            color: var(--teal-400);
+            font-size: var(--fs-lg);
+            font-weight: var(--fw-semibold);
+            line-height: var(--line-height-sm);
+        }
+
+        & > span {
+            height: 2px;
+            width: 100%;
+            background-color: var(--teal-400);
+        }
+    }
+
+    &__nav-link-label {
+        line-height: var(--line-height-sm);
+        font-size: var(--fs-3xl);
+        font-weight: var(--fw-bold);
+        overflow: hidden;
+    }
+
+    &__socials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 60px;
+        gap: var(--space-2xs);
+        width: 100%;
+    }
+
+    &__social-btn {
+        background-color: var(--gray-800);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        svg {
+            width: 25px;
+            height: 25px;
+
+            .a {
+                fill: var(--gray-300);
+            }
+        }
+    }
+}
