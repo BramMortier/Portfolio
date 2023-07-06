@@ -1,0 +1,11 @@
+* {
+    &::-webkit-scrollbar {
+        width: var(--space-xs);
+        background-color: var(--gray-700);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--gray-500);
+        padding-inline: var(--space-3xs);
+    }
+}

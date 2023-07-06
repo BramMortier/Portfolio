@@ -20,7 +20,7 @@
             padding: var(--space-2xl) var(--space-xl);
         }
 
-        @include breakpoint(mobile) {
+        @include breakpoint(mobileS) {
             padding: var(--space-2xl) var(--space-lg);
         }
     }

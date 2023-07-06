@@ -25,6 +25,9 @@ export const heroActions = document.querySelectorAll(".hero__action");
 export const experienceInfo = document.getElementById("experience-info");
 export const experienceTabList = document.getElementById("experience-company-list");
 
+export const projectsContainer = document.getElementById("projects-container");
+export const projectsSlider = document.getElementById("projects-slider");
+
 export const searchTerms = [
     {
         term: "Home",

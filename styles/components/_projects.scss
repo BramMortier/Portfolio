@@ -1,0 +1,117 @@
+@use "../utils" as *;
+
+.projects {
+    &__container {
+        width: 100%;
+        margin: 0 0 0 auto;
+        padding: var(--space-4xl) 0 var(--space-3xl) var(--space-4xl);
+
+        @include breakpoint(tablet) {
+            padding: var(--space-3xl) 0 var(--space-3xl) var(--space-xl);
+        }
+
+        @include breakpoint(mobile) {
+            padding: var(--space-2xl) 0 var(--space-2xl) var(--space-xl);
+        }
+
+        @include breakpoint(mobileS) {
+            padding: var(--space-2xl) 0 var(--space-2xl) var(--space-lg);
+        }
+    }
+
+    &__slider {
+        position: relative;
+        display: flex;
+        gap: var(--space-xl);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__slider-col {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+
+        &:nth-child(even) {
+            padding-top: var(--space-3xl);
+        }
+    }
+
+    &__project-card {
+        min-width: 25vw;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+
+        @include breakpoint(desktop) {
+            min-width: 30vw;
+        }
+
+        @include breakpoint(tablet) {
+            min-width: 50vw;
+        }
+
+        @include breakpoint(mobile) {
+            min-width: 75vw;
+        }
+
+        @include breakpoint(mobileS) {
+            min-width: 105vw;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__project-thumbnail {
+        position: relative;
+
+        img {
+            border-radius: 10px;
+            height: 50vh;
+            object-fit: cover;
+            object-position: 100% 50%;
+            transition: all ease 0.3s;
+        }
+    }
+
+    &__project-info {
+        & > h4 {
+            font-size: var(--fs-xl);
+            margin-bottom: var(--space-2xs);
+        }
+
+        & > p {
+            color: var(--gray-400);
+        }
+    }
+
+    &__project-action-btn {
+        position: absolute;
+        bottom: var(--space-md);
+        right: var(--space-md);
+        width: 50px;
+        height: 50px;
+        background-color: var(--teal-400);
+        border-radius: 10px;
+        border: none;
+        outline: none;
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all ease 0.4s;
+            padding: 14px;
+
+            .a {
+                fill: var(--gray-700);
+            }
+        }
+    }
+}
